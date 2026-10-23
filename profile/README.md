@@ -1,12 +1,40 @@
-## Hi there 👋
+# keianfluid
+計算安全工学研究室・流体解析班が利用する流体解析コード（fortran90/95）
 
-<!--
+## ルール
+- 学外者・研究室外部の人に無断で配布しない
+- コードを改変する場合は…
+  - 元のコードで利用されている変数名に則ること
+  - 適切にブランチを切り，`main`ブランチにいきなり`push`しないこと
+  - 変数はすべて小文字とし，大文字は利用しないこと（👌`node`, ☠️`Node`, `NODE`）
+  - 左詰めで書き，インデント整形を行うことで可読性の向上に努めること
+  - fortranコードのファイル拡張子は`.f90`とする．(`.f`や`.f95`は使用しない．)
+  - すべてのメインコード・サブルーチンの冒頭には`implicit none`を記述し暗黙の型宣言の無効化を行う．
+  - 整数は `i`, `j`, `k`, `l`, `m`, `n` を割り当てるようにする．
+    - 上記６つのアルファベットに実数変数を割り当てないこと 
+  - 上記整数以外で一文字のみ変数は利用しないこと（☠️ `x`, `y`, `z`，👌 `xx`, `yy`, `zz`）
+    - 変数を検索する際に煩雑になる
+  - 倍精度実数の宣言には`double precision`を使用し，`real(8)` は使用しないこと．
+  - なるべくGNUコンパイラ（`gfortran`, `mpif90`）を利用すること
 
-**Here are some ideas to get you started:**
+## リポジトリ一覧
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+### 全員がアクセス可能なリポジトリ
+- keianfluidに所属する全員がアクセス可能なリポジトリ
+- 🔰初心者向け
+- 🔧プリ・ポスト処理のためのツール
+
+#### 🔰[diff2d](https://github.com/keianfluid/diff2d)
+２次元拡散方程式を解析するためのコード
+
+#### 🔰[advec2d](https://github.com/keianfluid/advec2d)
+２次元移流方程式を解析するためのコードを格納したリポジトリ
+
+#### 🔰[ns2d](https://github.com/keianfluid/ns2d)
+２次元Navier-Stokes方程式を解析するためのコード
+
+#### 🔧[tri2tetra](https://github.com/keianfluid/tri2tetra)
+２次元メッシュ（３節点三角形要素）を３次元メッシュ（４節点テトラ要素）に拡張するコード
+
+#### 🔧[geo2mes](https://github.com/keianfluid/geo2mes)
+オープンソースのメッシュソフトウェアであるgmshでメッシュを生成し，各種コードに利用な形式（`.mes`，`*-mesh.bin`）に変換するコード
