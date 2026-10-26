@@ -38,3 +38,6 @@
 
 #### 🔧[geo2mes](https://github.com/keianfluid/geo2mes)
 オープンソースのメッシュソフトウェアであるgmshでメッシュを生成し，各種コードに利用な形式（`.mes`，`*-mesh.bin`）に変換するコード
+
+#### 🔧[metis-4.0.3](https://github.com/keianfluid/metis-4.0.3)
+並列化解析におけるプリ処理（領域分割）用のオープンソースソフトウェアMetisのソースコード
